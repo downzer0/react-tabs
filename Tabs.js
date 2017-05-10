@@ -67,8 +67,8 @@ export default class Tabs extends React.Component {
     }
 
     return (
-      <div className={"wrapper-tabs " + loading}>
-        <div className="tabs" role="tablist">
+      <div className={"dz0-wrapper-tabs " + loading}>
+        <div className="dz0-tabs" role="tablist">
           {data.map((tab, index) => {
             const label = tab.label;
             return (
@@ -76,7 +76,7 @@ export default class Tabs extends React.Component {
             );
           })}
         </div>
-        <div className="tabpanels">
+        <div className="dz0-tabpanels">
           {data.map((tab, index) => {
             const label = tab.label;
             const content = tab.content;

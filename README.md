@@ -4,7 +4,7 @@ Properly and efficiently handles clicks, keystrokes, and tabindexes.
 
 ## Usage
 
-```
+```javascript
 import Tabs from './Tabs';
 
 ...
@@ -39,11 +39,11 @@ render() {
 No styles are included, but use the following for reference:
 
 ```scss
-.wrapper-tabs {
+.dz0-wrapper-tabs {
 
-  .tabs {
+  .dz0-tabs {
 
-    .tab {
+    .dz0-tab {
 
       &.is-selected {
 
@@ -51,9 +51,9 @@ No styles are included, but use the following for reference:
     }
   }
 
-  .tabpanels {
+  .dz0-tabpanels {
 
-    .tabpanel {
+    .dz0-tabpanel {
 
       &.is-selected {
 

@@ -5,9 +5,9 @@ const Tabpanel = (props) => {
 
   const className = () => {
     if (index === selectedIndex) {
-      return 'tabpanel is-selected';
+      return 'dz0-tabpanel is-selected';
     } else {
-      return 'tabpanel';
+      return 'dz0-tabpanel';
     }
   }
 
