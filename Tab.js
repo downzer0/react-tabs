@@ -5,9 +5,9 @@ const Tab = (props) => {
 
   const className = () => {
     if (index === selectedIndex) {
-      return 'tab is-selected';
+      return 'dz0-tab is-selected';
     } else {
-      return 'tab';
+      return 'dz0-tab';
     }
   }
 
