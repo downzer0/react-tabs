@@ -1,0 +1,45 @@
+{
+  "name": "accessible-react-tabs",
+  "version": "0.0.3",
+  "description": "Accessible tab component for React",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/downzer0/react-tabs.git"
+  },
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "keywords": [
+    "react",
+    "tab",
+    "component",
+    "accessibility",
+    "accessible"
+  ],
+  "files": [
+    "es",
+    "lib",
+    "umd"
+  ],
+  "author": "downzer0",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/downzer0/react-tabs/issues"
+  },
+  "homepage": "https://github.com/downzer0/react-tabs#readme",
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-addons-create-fragment": "^15.5.4",
+    "react-dom": "^15.5.4"
+  },
+  "scripts": {
+    "build": "nwb build-react-component",
+    "prepublish": "npm run build"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "nwb": "^0.15.6"
+  }
+}

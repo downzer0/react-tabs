@@ -1,6 +1,5 @@
 *.css
 *.scss
-package.json
 node_modules/
 /umd
 npm-debug.log
