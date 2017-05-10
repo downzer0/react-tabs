@@ -1,7 +1,6 @@
 import React from 'react';
 import Tab from './Tab';
 import Tabpanel from './Tabpanel';
-import './tabs.css';
 
 export default class Tabs extends React.Component {
   constructor(props) {
