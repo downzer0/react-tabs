@@ -28,7 +28,14 @@ export default class Tabs extends React.Component {
   handleClick(event, index) {
     event.preventDefault();
     if (this.state.selected === index) {
+      if (this.props.callback) {
+        callback();
+      }
       return;
+    }
+
+    if (this.props.callback) {
+      callback();
     }
 
     this.setState({
@@ -40,6 +47,9 @@ export default class Tabs extends React.Component {
     if (event.keyCode === this.keys.up || event.keyCode === this.keys.down || event.keyCode === this.keys.left || event.keyCode === this.keys.right) {
       event.preventDefault();
     } else {
+      if (this.props.callback) {
+        callback();
+      }
       return;
     }
 
@@ -51,6 +61,10 @@ export default class Tabs extends React.Component {
       targetIndex = this.state.selected + 1;
     } else {
       return;
+    }
+
+    if (this.props.callback) {
+      callback();
     }
 
     this.setState({
