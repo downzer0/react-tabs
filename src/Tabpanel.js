@@ -1,26 +1,34 @@
 import React from 'react';
 
-const Tabpanel = (props) => {
-  const { index, selectedIndex, comp } = props;
+class Tabpanel extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      expanded: false,
+      hidden: true
+    };
+  }
 
-  const className = () => {
-    if (index === selectedIndex) {
+  className() {
+    if (this.props.index === this.props.selectedIndex) {
       return 'dz0-tabpanel is-selected';
     } else {
       return 'dz0-tabpanel';
     }
   }
 
-  return (
-    <div
-      role="tabpanel" id={"tabpanel-" + index}
-      className={className()}
-      aria-expanded="false"
-      aria-hidden="true"
-      tabIndex={(selectedIndex === index) ? '0' : -1}>
-      {props.comp}
-    </div>
-  )
+  render() {
+    return (
+      <div
+        role="tabpanel" id={"tabpanel-" + this.props.index}
+        className={className()}
+        aria-expanded={this.state.expanded}
+        aria-hidden={this.state.hidden}
+        tabIndex={(this.props.selectedIndex === this.props.index) ? '0' : -1}>
+        {this.props.comp}
+      </div>
+    )
+  }
 }
 
 export default Tabpanel;
