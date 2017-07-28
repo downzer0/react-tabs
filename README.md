@@ -12,11 +12,13 @@ import Tabs from './Tabs';
 const tabContent = [
   {
     label: 'Some Component',
-    content: <SomeComponent />
+    content: <SomeComponent />,
+    callback: this.someCallback
   },
   {
     label: 'Another Component',
-    content: <AnotherComponent someProp={this.someFunc} />
+    content: <AnotherComponent someProp={this.someFunc} />,
+    callback: () => {}
   },
   {
     label: 'Third Tab',
