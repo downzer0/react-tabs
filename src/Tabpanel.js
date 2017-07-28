@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Tabpanel extends React.Component {
+class Tabpanel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -9,7 +9,7 @@ const Tabpanel extends React.Component {
     };
   }
 
-  const className = () => {
+  className() {
     if (this.props.index === this.props.selectedIndex) {
       return 'dz0-tabpanel is-selected';
     } else {
@@ -17,16 +17,18 @@ const Tabpanel extends React.Component {
     }
   }
 
-  return (
-    <div
-      role="tabpanel" id={"tabpanel-" + this.props.index}
-      className={className()}
-      aria-expanded=this.state.expanded
-      aria-hidden=this.state.hidden
-      tabIndex={(this.props.selectedIndex === this.props.index) ? '0' : -1}>
-      {this.props.comp}
-    </div>
-  )
+  render() {
+    return (
+      <div
+        role="tabpanel" id={"tabpanel-" + this.props.index}
+        className={className()}
+        aria-expanded={this.state.expanded}
+        aria-hidden={this.state.hidden}
+        tabIndex={(this.props.selectedIndex === this.props.index) ? '0' : -1}>
+        {this.props.comp}
+      </div>
+    )
+  }
 }
 
 export default Tabpanel;
