@@ -31,7 +31,7 @@ class Tab extends React.Component {
     return (
       <button
         role="tab" id={"tab-" + this.props.index}
-        className={this.className}
+        className={this.className()}
         aria-selected={this.state.selected}
         aria-expanded={this.state.expanded}
         aria-controls={"tabpanel-" + this.props.index}

@@ -31,7 +31,7 @@ class Tabpanel extends React.Component {
     return (
       <div
         role="tabpanel" id={"tabpanel-" + this.props.index}
-        className={this.className}
+        className={this.className()}
         aria-expanded={this.state.expanded}
         aria-hidden={this.state.hidden}
         tabIndex={(this.props.selectedIndex === this.props.index) ? '0' : -1}>
