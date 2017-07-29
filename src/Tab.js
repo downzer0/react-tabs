@@ -13,8 +13,16 @@ class Tab extends React.Component {
 
   className() {
     if (this.props.index === this.props.selectedIndex) {
+      this.setState({
+        expanded: true,
+        selected: true
+      });
       return 'dz0-tab is-selected';
     } else {
+      this.setState({
+        expanded: false,
+        selected: false
+      });
       return 'dz0-tab';
     }
   }
@@ -30,7 +38,7 @@ class Tab extends React.Component {
         tabIndex={(this.props.selectedIndex === this.props.index) ? '0' : -1}
         onClick={(event) => this.props.onClick(event, this.props.index)}
         onKeyDown={(event) => this.props.onKeyDown(event, this.props.index)}>
-        {label}
+        {this.props.label}
       </button>
     )
   }
