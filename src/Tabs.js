@@ -28,19 +28,16 @@ export default class Tabs extends React.Component {
   handleClick(event, index) {
     event.preventDefault();
     if (this.state.selected === index) {
-      if (this.props.callback) {
-        this.props.callback;
-      }
       return;
-    }
-
-    if (this.props.callback) {
-      this.props.callback;
     }
 
     this.setState({
       selected: index
     });
+
+    if (this.props.data[index].callback) {
+      this.props.data[index].callback();
+    }
   }
 
   handleKeyDown(event) {
@@ -60,13 +57,13 @@ export default class Tabs extends React.Component {
       return;
     }
 
-    if (this.props.callback) {
-      this.props.callback;
-    }
-
     this.setState({
       selected: targetIndex
     });
+
+    if (this.props.callback) {
+      this.props.callback();
+    }
   }
 
   render() {
@@ -81,6 +78,7 @@ export default class Tabs extends React.Component {
         <div className="dz0-tabs" role="tablist">
           {data.map((tab, index) => {
             const label = tab.label;
+            const cb = tab.callback;
             return (
               <Tab key={index} index={index} selectedIndex={this.state.selected} label={label} onClick={this.handleClick} onKeyDown={this.handleKeyDown} />
             );
