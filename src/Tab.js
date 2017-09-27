@@ -4,34 +4,27 @@ class Tab extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      expanded: false,
-      selected: false
+      expanded: this.props.index === this.props.selectedIndex,
+      selected: this.props.index === this.props.selectedIndex
     };
 
-    this.className = this.className.bind(this);
-  }
-
-  className() {
-    if (this.props.index === this.props.selectedIndex) {
-      this.setState({
-        expanded: true,
-        selected: true
-      });
-      return 'dz0-tab is-selected';
-    } else {
-      this.setState({
-        expanded: false,
-        selected: false
-      });
-      return 'dz0-tab';
+    if (this.props.index === this.props.selectedIndex && this.props.callback) {
+      this.props.callback();
     }
+  }
+  
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      expanded: this.props.index === nextProps.selectedIndex,
+      selected: this.props.index === nextProps.selectedIndex
+    });
   }
 
   render() {
     return (
       <button
         role="tab" id={"tab-" + this.props.index}
-        className={this.className}
+        className={(this.props.index === this.props.selectedIndex) ? 'dz0-tab is-selected' : 'dz0-tab'}
         aria-selected={this.state.selected}
         aria-expanded={this.state.expanded}
         aria-controls={"tabpanel-" + this.props.index}
