@@ -7,6 +7,17 @@ class Tab extends React.Component {
       expanded: this.props.index === this.props.selectedIndex,
       selected: this.props.index === this.props.selectedIndex
     };
+
+    if (this.props.index === this.props.selectedIndex && this.props.callback) {
+      this.props.callback();
+    }
+  }
+  
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      expanded: this.props.index === nextProps.selectedIndex,
+      selected: this.props.index === nextProps.selectedIndex
+    });
   }
 
   render() {
