@@ -1,6 +1,6 @@
 # Accessible tab component for React
 
-Properly and efficiently handles clicks, keystrokes, and tabindexes.
+Properly and efficiently handles clicks, keystrokes, and tabindexes. Also allows for callbacks to be passed to perform some action when a tab is clicked (optional).
 
 ## Usage
 
