@@ -21,8 +21,17 @@ export default class Tabs extends React.Component {
       selected: 0
     };
 
+    this.buildClassList = this.buildClassList.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
+  }
+
+  buildClassList() {
+    const classList = ['dz0-wrapper-tabs'];
+    if (this.props.classes) {
+      classList.push(this.props.classes);
+    }
+    return classList.join(' ');
   }
 
   handleClick(event, index) {
@@ -74,7 +83,7 @@ export default class Tabs extends React.Component {
     }
 
     return (
-      <div className={"dz0-wrapper-tabs " + loading}>
+      <div className={this.buildClassList()}>
         <div className="dz0-tabs" role="tablist">
           {data.map((tab, index) => {
             const label = tab.label;
